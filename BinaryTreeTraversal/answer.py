@@ -26,3 +26,21 @@ def pre_order(node, res=None):
     pre_order(node.right, res)
 
     return res
+
+def in_order(node, res = None):
+    """
+    This function performs
+    an in_order traversal of
+    a binary tree.
+    """
+    if res is None:
+        res = []
+    
+    if not node:
+        return res 
+    
+    in_order(node.left, res)
+    res.append(node.data)
+    in_order(node.right, res)
+    
+    return res
