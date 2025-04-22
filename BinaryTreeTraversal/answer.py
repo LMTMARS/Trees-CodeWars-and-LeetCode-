@@ -44,3 +44,22 @@ def in_order(node, res = None):
     in_order(node.right, res)
     
     return res
+
+def post_order(node, res=None):
+    """
+    This function performs
+    a post_order traversal of
+    a binary tree.
+    """
+    if res is None:
+        res = []
+    
+    if not node:
+        return res 
+
+    post_order(node.left, res)
+    post_order(node.right, res)
+
+    res.append(node.data)
+
+    return res
